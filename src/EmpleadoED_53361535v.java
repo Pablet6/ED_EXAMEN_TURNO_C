@@ -19,19 +19,23 @@ public class EmpleadoED_53361535v {
   * @param dni 
   */
  public EmpleadoED_53361535v(String nombreCompleto, String dni) {
+     /**
+      *Constructor con dos parámetros
+      * @param nombreCompleto nombreCompleto nombre completo en mayúsculas
+      * @param dni dni documento nacional de identidad con letra y sin espacios
+      */
  this.nombreCompleto = nombreCompleto;
  this.dni = dni;
  }
  /**
-  * 
-  * @param horasExtra 
-  * @return 
+  * @ calcula el salario bruto mansual en funcion del salario base por hora y las horas extras
+  * @param horasExtra el precio de la hora extra se determina con la constante FACTOR_HORA_EXTRA
+  * @return devuelve el salario bruto mensual al mes 
   */
  public double getSalarioEsteMes(int horasExtra) {
  double cantidadExtra, salarioFinal;
  cantidadExtra = horasExtra * this.salarioBasePorHora *
 FACTOR_HORA_EXTRA;
- 
  salarioFinal=this.salarioBasePorHora * 40 * 4 + cantidadExtra;
  salarioFinal=(double)Math.round(salarioFinal * 100d) / 100d;
  return salarioFinal;
